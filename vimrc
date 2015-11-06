@@ -80,10 +80,7 @@ augroup phpSyntaxOverride
 augroup END
 
 " colors
-set t_Co=256
-colorscheme jellybeans
-set background=dark
-highlight Normal guibg=black guifg=white
+colorscheme fruity_forest
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
 
@@ -97,4 +94,6 @@ set statusline=%F%m%r%h%w\
 set statusline+=%{fugitive#statusline()}\    
 set statusline+=[%{strlen(&fenc)?&fenc:&enc}]
 set statusline+=\ [line\ %l\/%L]          
+
+" key shortcuts
 

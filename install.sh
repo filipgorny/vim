@@ -1,4 +1,4 @@
 mkdir -p ~/.vim
 mkdir -p ~/.vim/colors
 cp ./vimrc ~/.vimrc
-cp ./jellybeans.vim/colors/jellybeans.vim ~/.vim/colors/jellybeans.vim
+cp ./colors/fruity_forest.vim ~/.vim/colors/fruity_forest.vim
