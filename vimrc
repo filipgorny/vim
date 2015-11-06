@@ -66,6 +66,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <C-e> :NERDTreeToggle<CR>
+let NERDTreeMinimalUI=1
 
 " Php config
 function! PhpSyntaxOverride()
@@ -77,11 +78,6 @@ augroup phpSyntaxOverride
   autocmd!
   autocmd FileType php call PhpSyntaxOverride()
 augroup END
-
-
-if $COLORTERM == 'gnome-terminal'
-  set t_Co=256
-endif
 
 " colors
 set t_Co=256
