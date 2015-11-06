@@ -48,8 +48,8 @@ NeoBundle 'Shougo/vimproc.vim', {
 \ }
 
 NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'StanAngeloff/php.vim'
+NeoBundle 'tpope/vim-fugitive'
 
 call neobundle#end()
 
@@ -77,4 +77,28 @@ augroup phpSyntaxOverride
   autocmd!
   autocmd FileType php call PhpSyntaxOverride()
 augroup END
+
+
+if $COLORTERM == 'gnome-terminal'
+  set t_Co=256
+endif
+
+" colors
+set t_Co=256
+colorscheme jellybeans
+set background=dark
+highlight Normal guibg=black guifg=white
+highlight Normal ctermbg=NONE
+highlight nonText ctermbg=NONE
+
+command Q q
+
+hi TabLine      guifg=#333 guibg=#222 gui=none ctermfg=254 ctermbg=238 cterm=none
+hi TabLineSel   guifg=#666 guibg=#222 gui=bold ctermfg=231 ctermbg=235 cterm=bold
+hi TabLineFill  guifg=#999 guibg=#222 gui=none ctermfg=254 ctermbg=238 cterm=none
+
+set statusline=%F%m%r%h%w\ 
+set statusline+=%{fugitive#statusline()}\    
+set statusline+=[%{strlen(&fenc)?&fenc:&enc}]
+set statusline+=\ [line\ %l\/%L]          
 
